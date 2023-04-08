@@ -1,0 +1,113 @@
+.card-aluno-grafico{
+    height: 80%;
+    width: 30%;
+    background-color: #ffff;
+    display: none;
+    margin-left: 10%;
+    text-align: center;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+}
+
+.img-aluno{
+    width: 400px;
+    height: 400px;
+}
+
+.name-aluno{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #3347B0;
+}
+
+.cardMaterias{
+    height: 80%;
+    width: 30%;
+    display: flex;
+    margin-left: 10%;
+    text-align: center;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+}
+
+.grafico{
+    display: flex;
+    padding-top: 20%;
+    padding-left: 18%;
+    gap: 50px;
+}
+
+.segura{
+    width: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.potuacao{
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight:100000 ;
+    color: black;
+}
+
+.percentual{
+    height: 200px;
+    width: 10px;
+    border: solid 1px #fff;
+    border-radius: 10%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.porcentagem-nota-aprovado{
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px;
+    font-family: 'Poppins', sans-serif;
+    color: #3347B0;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.porcentagem-nota-reprovado{
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px;
+    font-family: 'Poppins', sans-serif;
+    color: #c11010;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.porcentagem-nota-exame{
+    font-style: normal;
+    font-weight: 700;
+    line-height: 27px;
+    font-family: 'Poppins', sans-serif;
+    color: #E5B657;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.disciplina{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight:100000 ;
+    color: #3347B0;
+}
+
+
+
+.nota_aprovado{
+    background-color: #3347B0;
+}
+
+.nota_meio_termo{
+    background-color: #E5B657;
+}
+
+.nota_reprovado{
+    background-color:#C11010 ;
+}

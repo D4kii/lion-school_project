@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: 100px 1fr 130px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+@media (max-width:647px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+}
