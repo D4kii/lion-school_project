@@ -64,6 +64,7 @@ const criandoCardAlunos = (aluno, indice) => {
     const cardsAlunosContainer = document.getElementById('cards-alunos_container');
     const headerSegundaTela = document.getElementById('card-status')
     const cardAlunoGrafico = document.getElementById('card-aluno-grafico')
+    const cardGrafico = document.getElementById('card_materias')
 
     const cardPlace = document.createElement('div');
     cardPlace.classList.add('card-curso_place');
@@ -83,9 +84,9 @@ const criandoCardAlunos = (aluno, indice) => {
         cardsAlunosContainer.style.display = 'none'
         headerSegundaTela.style.display = 'none'
         cardAlunoGrafico.style.display = 'flex'
+        cardGrafico.style.display = 'flex'
         carregarAlunoGrafico(aluno)
-        criandoGrafico(aluno)
-        // carregarGrafico(aluno)
+        carregarGrafico(aluno)
     }
 
     if (aluno.status == 'Finalizado') {
@@ -200,12 +201,12 @@ const carregarAlunoGrafico = (aluno) => {
 }
 
 const criandoGrafico = (aluno) => {
-    console.log(aluno)
-
+    
     const grafico = document.createElement('div')
     grafico.classList.add('grafico')
-
-    aluno.curso.disciplinas.forEach(function (disciplina) {
+    
+    aluno.disciplinas.forEach(function (disciplina) {
+        console.log(disciplina.media)
         const segura = document.createElement('div')
         segura.classList.add('segura')
 
@@ -252,10 +253,10 @@ const criandoGrafico = (aluno) => {
 
 const carregarGrafico = (aluno) => {
 
-    const container = document.querySelector('.cardMaterias')
-    const grafico = aluno.map(criandoGrafico)
+    const cardGrafico = document.getElementById('card_materias')
+    const grafico = criandoGrafico(aluno)
 
-    container.replaceChildren(...grafico)
+    cardGrafico.replaceChildren(grafico)
 }
 //carregar os botões da primeira tela
 carregarCurso()
