@@ -1,6 +1,6 @@
 # lion-school_project
 
-> Clique _[aqui]()_ para vizualizar o Projeto
+> Clique _[aqui](https://main--guileless-cobbler-afec96.netlify.app)_ para vizualizar o Projeto
 
 ![](./imgs/Capturar.PNG)
 
@@ -24,9 +24,18 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - [X]  Foi implementado a responsividade conforme planejado no Figma?
 - [X]  Foi criado o filtro por ano?
 
-## Tecnologias Utilizadas
+## Tecnologias e ferramentas Utilizadas
 
 * HTML 
 * CSS
 * JavaScript
+* Node.js
+* Postman
+* Netifly
+* Cyclic
+
+## Autores
+* [Daniela](https://github.com/D4kii)
+* [João](https://github.com/Ratinho253) 
+
 
