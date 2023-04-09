@@ -1,4 +1,4 @@
-# lion-school_project
+# Projeto Lion School
 
 > Clique _[aqui](https://main--guileless-cobbler-afec96.netlify.app)_ para vizualizar o Projeto
 
