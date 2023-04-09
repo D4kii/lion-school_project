@@ -14,7 +14,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 ## Critérios de avaliação
 
 - [X] Criou layout conforme designer feito no Figma?
-- [ ]  Os botões dos cursos são dinâmicos?
+- [X]  Os botões dos cursos são dinâmicos?
 - [X]  Os cards são criados dinamicamente?
 - [ ]  A página com informações dos cursos foi criada dinamicamente?
 - [X]  O filtro por status está funcional?
@@ -22,7 +22,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - [X]  A maioria das funções seguem as boas práticas como responsabilidade única?
 - [X]  Foi criado o layout responsivo no Figma?
 - [X]  Foi implementado a responsividade conforme planejado no Figma?
-- [X]  Foi criado o filtro por ano?
+- [ ]  Foi criado o filtro por ano?
 
 ## Tecnologias e ferramentas Utilizadas
 
