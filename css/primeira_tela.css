@@ -6,12 +6,6 @@
     justify-content: space-evenly;
 }
 
-main {
-    grid-area: main;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .container {
     margin-left: 5%;

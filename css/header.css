@@ -28,9 +28,12 @@
 
 .sair {
     height: 40px;
-    width: 10rem;
+    width: max-content;
+    margin-right: 4rem;
     display: flex;
+    padding: .8rem;
     gap: 1px;
+    cursor: pointer;
 }
 
 .texto_sair {

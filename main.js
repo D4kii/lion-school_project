@@ -6,15 +6,11 @@ import { getAlunos, getAlunosCurso, getAlunosStatus } from "./module/api.js"
 
 const botaoCurso = await getItensCurso();
 
-//Terceira tela
-// import { alunos } from "./module/script2.js";
-
-const matricula = '20151001001'
 
 
 //Primeira tela
 const criandoCardCursos = (curso, indice) => {
-
+    const exitButton = document.getElementById('div-sair')
     const divPrimeiraTela = document.getElementById('primeira-tela')
     const divSegundaTela = document.getElementById('cards-alunos_container')
     const headerSegundaTela = document.getElementById('card-status')
@@ -41,6 +37,9 @@ const criandoCardCursos = (curso, indice) => {
 
     divButtons.append(cardCurso);
 
+    exitButton.onclick = () => {
+        window.location.href = "https://github.com/D4kii/lion-school_project"
+    }
 
     cardCurso.onclick = () => {
         carregarCardsAlunosCurso(indice)
@@ -79,6 +78,7 @@ const criandoCardAlunos = (aluno, indice) => {
     const nomeCardAluno = document.createElement('h5');
     nomeCardAluno.classList.add('aluno-name__title');
     nomeCardAluno.textContent = aluno.nome;
+
 
     cardAluno.onclick = () => {
         cardsAlunosContainer.style.display = 'none'
@@ -258,10 +258,7 @@ const carregarGrafico = (aluno) => {
 
     cardGrafico.replaceChildren(grafico)
 }
+
+
 //carregar os botões da primeira tela
 carregarCurso()
-//carregar os cards de acordo com o status
-criandoCarregamentoStatus()
-//carregar o aluno da terceira tela
-// carregar_grafico()
-// carregarAluno_grafico()
