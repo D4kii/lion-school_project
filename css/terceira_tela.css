@@ -1,6 +1,11 @@
 .card-aluno-grafico{
-    height: 33rem;
-    width: max-content;
+    max-height: max-content;
+    min-height: 10rem;
+    padding: 1rem;
+    max-width: max-content;
+    min-width: 10rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
     background-color: #ffff;
     display: none;
     margin-left: 5rem;
@@ -10,7 +15,8 @@
 }
 
 .img-aluno{
-    width: 400px;
+    max-width: 400px;
+    min-width: 200px;
     height: 400px;
 }
 
@@ -22,7 +28,6 @@
 }
 
 .card_materias{
-    height: 33rem;
     width: max-content;
     display: none;
     justify-content: center;
@@ -119,4 +124,27 @@
     background-color:#C11010 ;
     box-shadow: 0px 0px 12px #C11010;
     border-radius: 4px;
+}
+@media (max-width:900px) {
+    main{
+        flex-direction: column;
+    }
+    .card-aluno-grafico{
+        min-height: max-content;
+    }
+    .card_materias{
+        min-height: max-content;
+    }
+    .grafico{
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+
+    }
+
+}
+@media (max-width:830px) {
+    
+    
 }

@@ -77,3 +77,19 @@
 .menu_aluno-todos {
     padding: .5rem;
 }
+@media (max-width:1000px) {
+    .card-status{
+        justify-content: space-evenly;
+    }
+    .legenda-status_componentes{
+        gap: .5rem;
+        width: 50%;
+    }
+
+}
+@media (max-width:830px) {
+    .legenda-status_componentes{
+        width: 70%;
+    }
+    
+}

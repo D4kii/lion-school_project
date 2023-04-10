@@ -51,13 +51,16 @@
     flex-direction: column;
     justify-content: flex-end;
     gap: 51px;
-    padding-left: 5%;
 }
 
 .cards-tag {
     padding-top: 10%;
 }
 
+.container-button{
+    width: 40%;
+
+}
 .curso_DS {
     display: flex;
     background-color: #3347B0;
@@ -120,4 +123,35 @@
 .img-RDS {
     padding: 5%;
     height: 6rem;
+}
+@media (max-width:1000px) {
+    .estudante {
+        display: none;
+    }
+    .container {
+        margin-left: 1%;
+    }
+    .escolha_curso{
+        font-size: 3rem;
+    }
+    .image-responsive img {
+        min-height: 10rem;
+        max-width: 20rem;
+    }
+}
+@media (max-width:830px) {
+    .container {
+        width: 80%;
+        text-align: center;
+    }
+    .escolha_curso{
+        font-size: 3rem;
+    }
+    .image-responsive {
+        display: none;
+    }
+    .primeira-tela {
+        flex-direction: column;
+    }
+    
 }

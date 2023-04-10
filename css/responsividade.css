@@ -1,10 +1,6 @@
-@media (max-width:647px) {
-    .image-responsive {
+@media (max-width:830px) {
+    
+    footer{
         display: none;
     }
-
-    .estudante {
-        display: none;
-    }
-
 }

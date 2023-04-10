@@ -27,6 +27,7 @@ const criandoCardCursos = (curso, indice) => {
     const imgCurso = document.createElement('img');
     imgCurso.classList.add(`img-${curso.sigla}`);
     imgCurso.src = curso.icone
+    console.log(curso);
 
     const textCurso = document.createElement('p');
     textCurso.classList.add(`${curso.sigla}`);
@@ -38,7 +39,7 @@ const criandoCardCursos = (curso, indice) => {
     divButtons.append(cardCurso);
 
     exitButton.onclick = () => {
-        window.location.href = "https://github.com/D4kii/lion-school_project"
+        window.location.href = "https://main--guileless-cobbler-afec96.netlify.app/"
     }
 
     cardCurso.onclick = () => {
@@ -107,6 +108,7 @@ const criandoTituloCurso = (aluno) => {
     const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
     const titleCard = document.createElement('h1')
     titleCard.classList.add('nome-curso_title')
+    titleCard.setAttribute('id', 'nome-curso_title')
 
     if (aluno.sigla == 'DS') {
         titleCard.textContent = 'Técnico em Desenvolvimento de Sistemas'
@@ -115,6 +117,8 @@ const criandoTituloCurso = (aluno) => {
 
         titleCard.textContent = 'Técnico em Redes de Computadores'
     }
+
+    criandoCarregamentoStatus()
 
     cardPrincipalAlunos.append(titleCard)
 }
@@ -133,18 +137,19 @@ const carregarCardsAlunosCurso = async (indice) => {
 }
 const criandoCarregamentoStatus = async () => {
     const buttons = document.querySelectorAll('.card-')
-
     buttons.forEach(button => {
         button.addEventListener('click', async () => {
             const idClicado = button.id;
             console.log(idClicado);
-
+            
             if (idClicado == 'status') {
-
+                
                 const todos = await getAlunos()
-
-
+                
+                
                 const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
+                const titleCurso = document.getElementById('nome-curso_title');
+                titleCurso.innerHTML = `Todos os Alunos`
 
                 const cardsAlunos = document.getElementById('card-curso_place');
 
@@ -157,6 +162,8 @@ const criandoCarregamentoStatus = async () => {
                 const retorno = await getAlunosStatus(idClicado)
 
                 const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
+                const titleCurso = document.getElementById('nome-curso_title');
+                titleCurso.innerHTML = idClicado
 
                 const cardsAlunos = document.getElementById('card-curso_place');
 
@@ -201,10 +208,10 @@ const carregarAlunoGrafico = (aluno) => {
 }
 
 const criandoGrafico = (aluno) => {
-    
+
     const grafico = document.createElement('div')
     grafico.classList.add('grafico')
-    
+
     aluno.disciplinas.forEach(function (disciplina) {
         console.log(disciplina.media)
         const segura = document.createElement('div')
