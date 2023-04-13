@@ -6,7 +6,6 @@
     justify-content: space-evenly;
 }
 
-
 .container {
     margin-left: 5%;
     display: flex;
@@ -22,6 +21,7 @@
 
 .escolha_curso {
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     font-size: 4rem;
 }
 
@@ -57,10 +57,10 @@
     padding-top: 10%;
 }
 
-.container-button{
+.container-button {
     width: 40%;
-
 }
+
 .curso_DS {
     display: flex;
     background-color: #3347B0;
@@ -124,6 +124,7 @@
     padding: 5%;
     height: 6rem;
 }
+
 @media (max-width:1000px) {
     .estudante {
         display: none;
@@ -131,7 +132,7 @@
     .container {
         margin-left: 1%;
     }
-    .escolha_curso{
+    .escolha_curso {
         font-size: 3rem;
     }
     .image-responsive img {
@@ -139,12 +140,13 @@
         max-width: 20rem;
     }
 }
-@media (max-width:830px) {
+
+@media (max-width:790px) {
     .container {
-        width: 80%;
+        width: 90%;
         text-align: center;
     }
-    .escolha_curso{
+    .escolha_curso {
         font-size: 3rem;
     }
     .image-responsive {
@@ -153,5 +155,13 @@
     .primeira-tela {
         flex-direction: column;
     }
-    
+    .curso_DS,
+    .curso_RDS {
+        min-width: 20rem;
+        max-width: 25rem;
+        height: 12rem;
+    }
+    .cards1 {
+        margin-bottom: 2rem;
+    }
 }

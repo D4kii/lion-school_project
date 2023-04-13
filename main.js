@@ -15,6 +15,8 @@ const criandoCardCursos = (curso, indice) => {
     const divSegundaTela = document.getElementById('cards-alunos_container')
     const headerSegundaTela = document.getElementById('card-status')
 
+    const nomeCursoCorrigido = curso.nome.replace(`00${indice + 1} -`, ``)
+
     const divButtons = document.createElement('div');
     divButtons.classList.add('container-buttons');
 
@@ -26,8 +28,8 @@ const criandoCardCursos = (curso, indice) => {
 
     const imgCurso = document.createElement('img');
     imgCurso.classList.add(`img-${curso.sigla}`);
-    imgCurso.src = curso.icone
-    console.log(curso);
+    imgCurso.setAttribute('alt', `imagem que representa o curso de ${nomeCursoCorrigido}`)
+    imgCurso.src = curso.icone;
 
     const textCurso = document.createElement('p');
     textCurso.classList.add(`${curso.sigla}`);
@@ -39,7 +41,7 @@ const criandoCardCursos = (curso, indice) => {
     divButtons.append(cardCurso);
 
     exitButton.onclick = () => {
-        window.location.href = "https://main--guileless-cobbler-afec96.netlify.app/"
+        window.location.reload()
     }
 
     cardCurso.onclick = () => {
@@ -54,12 +56,12 @@ const criandoCardCursos = (curso, indice) => {
 }
 
 const carregarCurso = () => {
-    const cardPrincipal = document.getElementById('card-principal')
-    const componentesCards = botaoCurso.cursos.map(criandoCardCursos)
+        const cardPrincipal = document.getElementById('card-principal')
+        const componentesCards = botaoCurso.cursos.map(criandoCardCursos)
 
-    cardPrincipal.replaceChildren(...componentesCards)
-}
-//Segunda Tela
+        cardPrincipal.replaceChildren(...componentesCards)
+    }
+    //Segunda Tela
 const criandoCardAlunos = (aluno, indice) => {
     const cardsAlunosContainer = document.getElementById('cards-alunos_container');
     const headerSegundaTela = document.getElementById('card-status')
@@ -122,7 +124,7 @@ const criandoTituloCurso = (aluno) => {
 
     cardPrincipalAlunos.append(titleCard)
 }
-const carregarCardsAlunosCurso = async (indice) => {
+const carregarCardsAlunosCurso = async(indice) => {
     const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
 
     const cardsAlunos = document.getElementById('card-curso_place');
@@ -135,53 +137,53 @@ const carregarCardsAlunosCurso = async (indice) => {
     cardsAlunos.replaceChildren(...dadosAlunosCard)
 
 }
-const criandoCarregamentoStatus = async (sigla) => {
-    const buttons = document.querySelectorAll('.card-')
-    buttons.forEach(button => {
-        button.addEventListener('click', async () => {
-            const idClicado = button.id;
-            console.log(idClicado);
-            
-            if (idClicado == 'status') {
-                
-                const todos = await getAlunosCurso(sigla)
-                
-                
-                const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
-                const titleCurso = document.getElementById('nome-curso_title');
-                titleCurso.innerHTML = `Todos os Alunos`
+const criandoCarregamentoStatus = async(sigla) => {
+        const buttons = document.querySelectorAll('.card-')
+        buttons.forEach(button => {
+            button.addEventListener('click', async() => {
+                const idClicado = button.id;
+                console.log(idClicado);
 
-                const cardsAlunos = document.getElementById('card-curso_place');
-                
-                console.log(sigla);
-                const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
-                cardsAlunos.replaceChildren(...dadosAlunosCard)
+                if (idClicado == 'status') {
+
+                    const todos = await getAlunosCurso(sigla)
 
 
+                    const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
+                    const titleCurso = document.getElementById('nome-curso_title');
+                    titleCurso.innerHTML = `Todos os Alunos`
 
-            } else {
-                const retorno = await getAlunosCursoStatus(sigla, idClicado)
+                    const cardsAlunos = document.getElementById('card-curso_place');
 
-                const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
-                const titleCurso = document.getElementById('nome-curso_title');
-                titleCurso.innerHTML = idClicado
-
-                const cardsAlunos = document.getElementById('card-curso_place');
-
-                const dadosAlunosCard = await retorno.listaAlunosStatus.alunos.map(criandoCardAlunos)
-                cardsAlunos.replaceChildren(...dadosAlunosCard)
-
-            }
+                    console.log(sigla);
+                    const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
+                    cardsAlunos.replaceChildren(...dadosAlunosCard)
 
 
 
-        })
-    });
+                } else {
+                    const retorno = await getAlunosCursoStatus(sigla, idClicado)
+
+                    const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
+                    const titleCurso = document.getElementById('nome-curso_title');
+                    titleCurso.innerHTML = idClicado
+
+                    const cardsAlunos = document.getElementById('card-curso_place');
+
+                    const dadosAlunosCard = await retorno.listaAlunosStatus.alunos.map(criandoCardAlunos)
+                    cardsAlunos.replaceChildren(...dadosAlunosCard)
+
+                }
 
 
 
-}
-//Terceira Tela
+            })
+        });
+
+
+
+    }
+    //Terceira Tela
 const criandoCarAlunoSelecionado = (aluno) => {
 
     const divAluno = document.createElement('div')
@@ -213,7 +215,7 @@ const criandoGrafico = (aluno) => {
     const grafico = document.createElement('div')
     grafico.classList.add('grafico')
 
-    aluno.disciplinas.forEach(function (disciplina) {
+    aluno.disciplinas.forEach(function(disciplina) {
         console.log(disciplina.media)
         const segura = document.createElement('div')
         segura.classList.add('segura')

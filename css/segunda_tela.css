@@ -56,13 +56,14 @@
     text-align: center;
     color: #ffffff;
 }
+
 @media (max-width:1000px) {
-    .nome-curso_title{
+    .nome-curso_title {
         text-align: center;
     }
+    .card-curso_place {
+        padding: 0;
+    }
+}
 
-}
-@media (max-width:830px) {
-    
-    
-}
+@media (max-width:830px) {}

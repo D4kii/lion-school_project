@@ -1,4 +1,4 @@
-.card-aluno-grafico{
+.card-aluno-grafico {
     max-height: max-content;
     min-height: 10rem;
     padding: 1rem;
@@ -14,37 +14,36 @@
     flex-direction: column;
 }
 
-.img-aluno{
+.img-aluno {
     max-width: 400px;
     min-width: 200px;
     height: 400px;
 }
 
-.name-aluno{
+.name-aluno {
     text-shadow: 4px 5px 12px rgba(0, 0, 0, 0.25);
     font-size: 1.4rem;
     font-weight: 500;
     color: #3347B0;
 }
 
-.card_materias{
+.card_materias {
     width: max-content;
     display: none;
     justify-content: center;
     margin-left: 5rem;
     text-align: center;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
-    
 }
 
-.grafico{
+.grafico {
     display: flex;
     padding: 5rem;
     align-items: center;
     gap: 1.5rem;
 }
 
-.segura{
+.segura {
     width: 20px;
     height: 300px;
     display: flex;
@@ -53,18 +52,18 @@
     gap: 10px;
 }
 
-.potuacao{
+.potuacao {
     display: flex;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    font-weight:100000 ;
+    font-weight: 100000;
     color: black;
 }
 
-.percentual{
+.percentual {
     height: 200px;
     width: 10px;
-    background-color:#EEEFF8;
+    background-color: #EEEFF8;
     /* border: solid 1px #000; */
     border-radius: 10%;
     display: flex;
@@ -72,7 +71,7 @@
     flex-direction: column;
 }
 
-.porcentagem-nota-aprovado{
+.porcentagem-nota-aprovado {
     font-style: normal;
     font-weight: 700;
     line-height: 27px;
@@ -81,7 +80,7 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.porcentagem-nota-reprovado{
+.porcentagem-nota-reprovado {
     font-style: normal;
     font-weight: 700;
     line-height: 27px;
@@ -90,7 +89,7 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.porcentagem-nota-exame{
+.porcentagem-nota-exame {
     font-style: normal;
     font-weight: 700;
     line-height: 27px;
@@ -99,52 +98,81 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.disciplina{
+.disciplina {
     font-size: 18px;
     font-weight: 900;
     color: #3347B0;
     text-shadow: 4px 5px 12px rgba(0, 0, 0, 0.25);
 }
 
-
-
-.nota_aprovado{
+.nota_aprovado {
     background-color: #3347B0;
     box-shadow: 0px 0px 12px #3347B0;
     border-radius: 4px;
 }
 
-.nota_meio_termo{
+.nota_meio_termo {
     background-color: #E5B657;
     box-shadow: 0px 0px 12px #E5B657;
     border-radius: 4px;
 }
 
-.nota_reprovado{
-    background-color:#C11010 ;
+.nota_reprovado {
+    background-color: #C11010;
     box-shadow: 0px 0px 12px #C11010;
     border-radius: 4px;
 }
-@media (max-width:900px) {
-    main{
+
+@media (max-width:1000px) {
+    .card_materias {
+        box-shadow: none;
+    }
+    main {
         flex-direction: column;
     }
-    .card-aluno-grafico{
+    .card-aluno-grafico {
         min-height: max-content;
     }
-    .card_materias{
+    .card_materias {
         min-height: max-content;
     }
-    .grafico{
+    .grafico {
         padding-left: 4rem;
         padding-right: 4rem;
         padding-bottom: 1.5rem;
         padding-top: 1.5rem;
-
     }
-
 }
-@media (max-width:830px) {
-    
-    
+
+@media (max-width:790px) {
+    .img-aluno {
+        max-width: 250px;
+        min-width: 100px;
+        height: 250px;
+    }
+    .grafico {
+        padding: 0;
+        gap: 1rem;
+    }
+    .card-aluno-grafico {
+        box-shadow: none;
+        height: 22rem;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .foto-aluno {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card_materias {
+        padding-top: 2rem;
+        margin: 0;
+    }
+    .name-aluno {
+        padding: 1rem;
+        font-size: 1.4rem;
+        width: 12rem;
+    }
 }
