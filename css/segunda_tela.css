@@ -57,7 +57,7 @@
     color: #ffffff;
 }
 
-@media (max-width:1000px) {
+@media (max-width:1100px) {
     .nome-curso_title {
         text-align: center;
     }

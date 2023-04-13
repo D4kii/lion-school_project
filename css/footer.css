@@ -15,9 +15,10 @@ footer {
     font-size: .5rem;
 }
 
-.ulist img{
+.ulist img {
     height: 1rem;
 }
+
 .ulist {
     display: flex;
     align-items: center;
@@ -47,6 +48,7 @@ footer {
 
 .fa-brands {
     color: white;
+    padding: .5rem;
 }
 
 .social-logo {
@@ -54,9 +56,16 @@ footer {
     align-items: center;
     justify-content: center;
     width: 2.5rem;
-    height: 2.5rem;
+    height: max-content;
     border: solid 2px #fff;
     border-radius: 100%;
+}
+
+.social-logo:hover {
+    -xpedu-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: .3s;
 }
 
 @media (max-width:647px) {
