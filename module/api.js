@@ -25,7 +25,6 @@ export const getAlunosCurso = async(filtro) => {
     const urlAlunosCurso = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos?cursos=${filtro}`
     const responseAlunosCurso = await fetch(urlAlunosCurso);
     const dataAlunosCurso = await responseAlunosCurso.json();
-    console.log(dataAlunosCurso);
     return {
         listaAlunosCurso: dataAlunosCurso
     }

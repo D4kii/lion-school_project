@@ -15,7 +15,7 @@ const criandoCardCursos = (curso, indice) => {
     const divSegundaTela = document.getElementById('cards-alunos_container')
     const headerSegundaTela = document.getElementById('card-status')
 
-    const nomeCursoCorrigido = curso.nome.replace(`00${indice + 1} -`, ``)
+    const nomeCursoCorrigido = curso.nome.replace(`001 -`, ``)
 
     const divButtons = document.createElement('div');
     divButtons.classList.add('container-buttons');
@@ -82,7 +82,7 @@ const criandoCardAlunos = (aluno, indice) => {
     nomeCardAluno.classList.add('aluno-name__title');
     nomeCardAluno.textContent = aluno.nome;
 
-
+    carregarDropdownAnosFiltro(aluno)
     cardAluno.onclick = () => {
         cardsAlunosContainer.style.display = 'none'
         headerSegundaTela.style.display = 'none'
@@ -105,85 +105,97 @@ const criandoCardAlunos = (aluno, indice) => {
     return cardPlace;
 
 }
-const criandoTituloCurso = (aluno) => {
+const criandoTituloCurso = (aluno, indice) => {
 
     const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
     const titleCard = document.createElement('h1')
     titleCard.classList.add('nome-curso_title')
     titleCard.setAttribute('id', 'nome-curso_title')
 
-    if (aluno.sigla == 'DS') {
-        titleCard.textContent = 'Técnico em Desenvolvimento de Sistemas'
+    const tituloCorrigido = aluno.nomeCurso.replace(`001 -`, ``)
 
-    } else if (aluno.sigla == 'RDS') {
+    titleCard.textContent = tituloCorrigido
+    console.log(indice);
 
-        titleCard.textContent = 'Técnico em Redes de Computadores'
-    }
 
     criandoCarregamentoStatus(aluno.sigla)
+
 
     cardPrincipalAlunos.append(titleCard)
 }
 const carregarCardsAlunosCurso = async(indice) => {
-    const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
+    // const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
 
     const cardsAlunos = document.getElementById('card-curso_place');
     const sigla = await botaoCurso.cursos[indice].sigla
 
     const listaAlunos = await getAlunosCurso(sigla)
     const dadosAlunosCard = await listaAlunos.listaAlunosCurso.alunos.map(criandoCardAlunos)
-    const dadosTituloCurso = criandoTituloCurso(listaAlunos.listaAlunosCurso.alunos[1])
+    criandoTituloCurso(listaAlunos.listaAlunosCurso.alunos[indice], indice)
+
 
     cardsAlunos.replaceChildren(...dadosAlunosCard)
 
 }
 const criandoCarregamentoStatus = async(sigla) => {
-        const buttons = document.querySelectorAll('.card-')
-        buttons.forEach(button => {
-            button.addEventListener('click', async() => {
-                const idClicado = button.id;
-                console.log(idClicado);
+    const buttons = document.querySelectorAll('.card-')
+    buttons.forEach(button => {
+        button.addEventListener('click', async() => {
+            const idClicado = button.id;
+            console.log(idClicado);
 
-                if (idClicado == 'status') {
+            if (idClicado == 'status') {
 
-                    const todos = await getAlunosCurso(sigla)
+                const todos = await getAlunosCurso(sigla)
 
+                const titleCurso = document.getElementById('nome-curso_title');
+                titleCurso.innerHTML = `Todos os Alunos`
 
-                    const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
-                    const titleCurso = document.getElementById('nome-curso_title');
-                    titleCurso.innerHTML = `Todos os Alunos`
+                const cardsAlunos = document.getElementById('card-curso_place');
 
-                    const cardsAlunos = document.getElementById('card-curso_place');
-
-                    console.log(sigla);
-                    const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
-                    cardsAlunos.replaceChildren(...dadosAlunosCard)
+                console.log(sigla);
+                const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
+                cardsAlunos.replaceChildren(...dadosAlunosCard)
 
 
-
-                } else {
-                    const retorno = await getAlunosCursoStatus(sigla, idClicado)
-
-                    const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
-                    const titleCurso = document.getElementById('nome-curso_title');
-                    titleCurso.innerHTML = idClicado
-
-                    const cardsAlunos = document.getElementById('card-curso_place');
-
-                    const dadosAlunosCard = await retorno.listaAlunosStatus.alunos.map(criandoCardAlunos)
-                    cardsAlunos.replaceChildren(...dadosAlunosCard)
-
-                }
+            } else {
+                const retorno = await getAlunosCursoStatus(sigla, idClicado)
 
 
 
-            })
-        });
+                const titleCurso = document.getElementById('nome-curso_title');
+                titleCurso.innerHTML = idClicado
+
+                const cardsAlunos = document.getElementById('card-curso_place');
+
+                const dadosAlunosCard = await retorno.listaAlunosStatus.alunos.map(criandoCardAlunos)
+                cardsAlunos.replaceChildren(...dadosAlunosCard)
+
+            }
+
+        })
+    });
 
 
+}
+const criandoDropdownAnosFiltro = (alunos) => {
 
-    }
-    //Terceira Tela
+    const anoConclusao = document.createElement('p');
+    anoConclusao.setAttribute('id', 'ano-conclusao')
+    anoConclusao.textContent = alunos.conclusao
+
+    console.log(alunos.conclusao);
+
+}
+
+const carregarDropdownAnosFiltro = async() => {
+
+
+}
+
+// const criandoCarregamentoAnoConclusao = 
+
+//Terceira Tela
 const criandoCarAlunoSelecionado = (aluno) => {
 
     const divAluno = document.createElement('div')
@@ -216,7 +228,6 @@ const criandoGrafico = (aluno) => {
     grafico.classList.add('grafico')
 
     aluno.disciplinas.forEach(function(disciplina) {
-        console.log(disciplina.media)
         const segura = document.createElement('div')
         segura.classList.add('segura')
 
@@ -238,14 +249,13 @@ const criandoGrafico = (aluno) => {
             textNota.classList.add('porcentagem-nota-reprovado')
             valorNota.classList.add('nota_reprovado')
         } else if (parseInt(textNota.textContent) >= 61 && parseInt(textNota.textContent) <= 69) {
-            console.log(textNota.textContent);
+
             textNota.classList.add('porcentagem-nota-exame')
             valorNota.classList.add('nota_meio_termo')
         }
 
         const altura = `${(valor / 50) * 50}%`
         valorNota.style.height = altura
-        console.log(altura);
 
 
         const materia = document.createElement('span')
@@ -272,3 +282,4 @@ const carregarGrafico = (aluno) => {
 
 //carregar os botões da primeira tela
 carregarCurso()
+carregarDropdownAnosFiltro()

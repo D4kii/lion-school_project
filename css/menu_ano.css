@@ -1,0 +1,22 @@
+.menu_ano-conclusao {
+    padding: .4rem;
+}
+
+.dropdown-place {
+    gap: 4rem;
+}
+
+.dropdown:hover .menu-dropdown-ano_content {
+    display: block;
+}
+
+.menu-dropdown-ano_content {
+    display: none;
+    position: absolute;
+    background-color: #3347B0;
+    color: #ffffff;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
