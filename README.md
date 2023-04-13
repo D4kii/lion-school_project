@@ -16,7 +16,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - [X] Criou layout conforme designer feito no Figma?
 - [X]  Os botões dos cursos são dinâmicos?
 - [X]  Os cards são criados dinamicamente?
-- [ ]  A página com informações dos cursos foi criada dinamicamente?
+- [X]  A página com informações dos cursos foi criada dinamicamente?
 - [X]  O filtro por status está funcional?
 - [X]  Os nomes das variáveis, funções e arquivos tem valor semântico?
 - [X]  A maioria das funções seguem as boas práticas como responsabilidade única?
