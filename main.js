@@ -2,7 +2,7 @@
 
 import { getItensCurso } from "./module/api.js"
 
-import { getAlunos, getAlunosCurso, getAlunosStatus } from "./module/api.js"
+import { getAlunos, getAlunosCurso, getAlunosStatus, getAlunosCursoStatus } from "./module/api.js"
 
 const botaoCurso = await getItensCurso();
 
@@ -118,7 +118,7 @@ const criandoTituloCurso = (aluno) => {
         titleCard.textContent = 'Técnico em Redes de Computadores'
     }
 
-    criandoCarregamentoStatus()
+    criandoCarregamentoStatus(aluno.sigla)
 
     cardPrincipalAlunos.append(titleCard)
 }
@@ -135,7 +135,7 @@ const carregarCardsAlunosCurso = async (indice) => {
     cardsAlunos.replaceChildren(...dadosAlunosCard)
 
 }
-const criandoCarregamentoStatus = async () => {
+const criandoCarregamentoStatus = async (sigla) => {
     const buttons = document.querySelectorAll('.card-')
     buttons.forEach(button => {
         button.addEventListener('click', async () => {
@@ -144,7 +144,7 @@ const criandoCarregamentoStatus = async () => {
             
             if (idClicado == 'status') {
                 
-                const todos = await getAlunos()
+                const todos = await getAlunosCurso(sigla)
                 
                 
                 const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
@@ -152,14 +152,15 @@ const criandoCarregamentoStatus = async () => {
                 titleCurso.innerHTML = `Todos os Alunos`
 
                 const cardsAlunos = document.getElementById('card-curso_place');
-
-                const dadosAlunosCard = await todos.listaTodosAlunos.alunos.map(criandoCardAlunos)
+                
+                console.log(sigla);
+                const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
                 cardsAlunos.replaceChildren(...dadosAlunosCard)
 
 
 
             } else {
-                const retorno = await getAlunosStatus(idClicado)
+                const retorno = await getAlunosCursoStatus(sigla, idClicado)
 
                 const cardPrincipalAlunos = document.getElementById('cards-alunos_container');
                 const titleCurso = document.getElementById('nome-curso_title');

@@ -43,6 +43,12 @@
     width: 1.5rem;
     height: 1.5rem;
 }
+.dropdown-place{
+    display: flex;
+    gap: 2rem;
+    padding-left: 2rem;
+    align-items: center;
+}
 
 .dropdown {
     position: relative;
