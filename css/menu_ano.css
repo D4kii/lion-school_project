@@ -1,5 +1,5 @@
 .menu_ano-conclusao {
-    padding: .4rem;
+    padding: 12px 16px;
 }
 
 .dropdown-place {
@@ -8,6 +8,9 @@
 
 .dropdown:hover .menu-dropdown-ano_content {
     display: block;
+}
+.ano-conclusao{
+    padding: .5rem;
 }
 
 .menu-dropdown-ano_content {
@@ -19,4 +22,9 @@
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
+}
+.menu-dropdown-ano_content :hover{
+    background-color: #ffffff;
+    color: #3347B0;
+    transition: .3s;
 }

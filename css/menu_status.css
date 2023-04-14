@@ -77,6 +77,7 @@
 .menu_aluno-todos:hover {
     background-color: #ffffff;
     color: #3347B0;
+    transition: .4s;
 }
 
 .menu_aluno-finalizado,
