@@ -1,4 +1,4 @@
-# Projeto Lion School
+# Atividade integrada Lion School - SENAI 2023
 
 > Clique _[aqui](https://main--guileless-cobbler-afec96.netlify.app)_ para vizualizar o Projeto
 
