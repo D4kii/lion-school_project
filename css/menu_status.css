@@ -3,7 +3,7 @@
     background-color: #BCC2E5;
     height: 3rem;
     display: none;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: #3347B0;
 }
 
@@ -99,5 +99,20 @@
 @media (max-width:830px) {
     .legenda-status_componentes {
         width: 70%;
+    }
+}
+
+@media (max-width:600px){
+    .card-status{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+    }
+    .legenda-status_componentes{
+        padding: .5rem;
+    }
+    .dropdown-place {
+        padding: .5rem;
     }
 }

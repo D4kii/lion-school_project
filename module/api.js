@@ -49,3 +49,13 @@ export const getAlunosCursoStatus = async(filtro, idClicado) => {
         listaAlunosStatus: dataAlunosStatus
     }
 }
+
+export const getAlunosCursoConclusao = async(filtro, idClicado) => {
+    const urlAlunosStatus = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos?cursos=${filtro}&conclusao=${idClicado}`
+    const responseAlunosStatus = await fetch(urlAlunosStatus);
+    const dataAlunosStatus = await responseAlunosStatus.json();
+
+    return {
+        listaAlunosStatus: dataAlunosStatus
+    }
+}

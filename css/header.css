@@ -36,7 +36,12 @@ header {
     display: flex;
     padding: .8rem;
     gap: 1px;
-    cursor: pointer;
+}
+
+.texto_sair:hover{
+    -xpedu-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .texto_sair {
@@ -46,10 +51,22 @@ header {
     font-weight: 500;
     font-size: 2rem;
     color: #ffff;
+    cursor: pointer;
+    transition: .3s;
 }
 
 @media (max-width:647px) {
     .texto_sair {
         display: none;
+    }
+
+    .sair:hover{
+        -xpedu-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    .sair {
+        transition: .3s;
+        cursor: pointer;
     }
 }

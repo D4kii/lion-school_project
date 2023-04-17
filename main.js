@@ -2,7 +2,7 @@
 
 import { getItensCurso } from "./module/api.js"
 
-import { getAlunos, getAlunosCurso, getAlunosStatus, getAlunosCursoStatus } from "./module/api.js"
+import { getAlunos, getAlunosCurso, getAlunosStatus, getAlunosCursoStatus, getAlunosCursoConclusao } from "./module/api.js"
 
 const botaoCurso = await getItensCurso();
 
@@ -67,7 +67,7 @@ const criandoCardAlunos = (aluno, indice) => {
     const headerSegundaTela = document.getElementById('card-status')
     const cardAlunoGrafico = document.getElementById('card-aluno-grafico')
     const cardGrafico = document.getElementById('card_materias')
-
+    
     const cardPlace = document.createElement('div');
     cardPlace.classList.add('card-curso_place');
 
@@ -91,19 +91,20 @@ const criandoCardAlunos = (aluno, indice) => {
         carregarAlunoGrafico(aluno)
         carregarGrafico(aluno)
     }
-
+    
     if (aluno.status == 'Finalizado') {
         cardAluno.style.backgroundColor = '#3347B0'
     } else {
         cardAluno.style.backgroundColor = '#E5B657'
     }
-
+    
     cardAluno.append(imgCardAluno, nomeCardAluno);
     cardPlace.append(cardAluno)
-
-
+    
+    
+    console.log(cardPlace);
     return cardPlace;
-
+    
 }
 const criandoTituloCurso = (aluno, indice) => {
 
@@ -182,38 +183,47 @@ const criandoDropdownAnosFiltro = (aluno) => {
 
     const anoConclusao = document.createElement('p');
     anoConclusao.classList.add('ano-conclusao')
-    anoConclusao.setAttribute('id', `ano-conclusao- ${aluno.conclusao}`);
+    anoConclusao.setAttribute('id', `${aluno.conclusao}`);
     anoConclusao.textContent = aluno.conclusao;
+
 
     return anoConclusao;
 
 }
 
-const criandoCarregamentoAnoConclusao = async () => {
-    const buttons = document.querySelectorAll('.ano-conclusao-')
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', async () => {
-    //         const idClicado = button.id;
-    //         console.log(idClicado);
+const criandoCarregamentoAnoConclusao = async (alunos) => {
+    const alunoArray = []
+    console.log(alunos);
+    const buttons = document.querySelectorAll('.ano-conclusao')
+    buttons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const idClicado = button.id;
+            alunos.alunos.forEach(async aluno => {
 
-    //         if (idClicado == 'status') {
+                if (idClicado == aluno.conclusao) {
+                    alunoArray.push(aluno)
+                    const alunoAnoConclusao = await getAlunosCursoConclusao(aluno.sigla, idClicado)
+                    console.log(alunoAnoConclusao);
+                    
+                    const titleCurso = document.getElementById('nome-curso_title');
+                    titleCurso.innerHTML = `Conclusão em ${aluno.conclusao}`
+                    
+                    
+                    const cardsAlunos = document.getElementById('card-curso_place');
+                            
+                    
+                    const dadosAlunosCard = await alunoAnoConclusao.listaAlunosStatus.alunos.map(criandoCardAlunos)
+                    console.log(dadosAlunosCard);
+                    cardsAlunos.replaceChildren(...dadosAlunosCard)
 
-    //             const todos = await getAlunosCurso(sigla)
+                }
+            });
 
-    //             const titleCurso = document.getElementById('nome-curso_title');
-    //             titleCurso.innerHTML = `Todos os Alunos`
+        })
 
-    //             const cardsAlunos = document.getElementById('card-curso_place');
-
-    //             console.log(sigla);
-    //             const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
-    //             cardsAlunos.replaceChildren(...dadosAlunosCard)
-
-    //         }
+    });
 
 
-    //     }   
-    // }  
 }
 
 const carregarDropdownAnosFiltro = async (lista) => {
@@ -224,6 +234,7 @@ const carregarDropdownAnosFiltro = async (lista) => {
     console.log(lista)
 
     dropdownPlace.replaceChildren(...cardsAnos)
+    criandoCarregamentoAnoConclusao(lista);
 }
 
 // const criandoCarregamentoAnoConclusao = 
@@ -262,7 +273,7 @@ const criandoGrafico = (aluno) => {
 
     aluno.disciplinas.forEach(function (disciplina) {
         const segura = document.createElement('div')
-        segura.classList.add('segura')
+        segura.classList.add('percentual_box')
 
         const textNota = document.createElement('span')
         textNota.classList.add('potuacao')
@@ -313,5 +324,5 @@ const carregarGrafico = (aluno) => {
 }
 
 
-//carregar os botões da primeira tela
+//carregar os botões da primeira tela e todos os componentes respectivamente.
 carregarCurso()
