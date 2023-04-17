@@ -9,7 +9,7 @@ export const getItensCurso = async() => {
     return data
 }
 
-export const getAlunos = async(filtro) => {
+export const getAlunos = async() => {
 
     const urlTodosAlunos = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos`;
     const responseTodosAlunos = await fetch(urlTodosAlunos);
@@ -18,6 +18,17 @@ export const getAlunos = async(filtro) => {
 
     return {
         listaTodosAlunos: dataTodosAlunos,
+    }
+}
+export const getAlunoMatricula = async(filtro) => {
+
+    const urlTodosAlunoMatricula = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos/${filtro}`;
+    const responseAlunoMatricula = await fetch(urlTodosAlunoMatricula);
+    const dataAlunoMatricula = await responseAlunoMatricula.json();
+
+
+    return {
+        listaTodosAlunos: dataAlunoMatricula,
     }
 }
 

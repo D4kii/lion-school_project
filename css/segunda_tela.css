@@ -23,6 +23,7 @@
     display: flex;
     padding-top: 5rem;
     color: #3347B0;
+    margin-top: 3rem;
 }
 
 .card {
@@ -70,4 +71,8 @@
     }
 }
 
-@media (max-width:830px) {}
+@media (max-width:830px) {
+    .nome-curso_title {
+        margin-top: 5rem;
+    }
+}

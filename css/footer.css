@@ -67,9 +67,9 @@ footer {
     transform: scale(1.2);
     transition: .3s;
 }
-@media (max-width:830px) {
-    
-    footer{
+
+@media (max-width:900px) {
+    footer {
         display: none;
     }
 }

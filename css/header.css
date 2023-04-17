@@ -2,7 +2,16 @@ header {
     width: 100%;
 }
 
-.div_inicio {
+.header_menu {
+    width: 100%;
+    background-color: #BCC2E5;
+    height: 3rem;
+    display: none;
+    justify-content: space-evenly;
+    color: #3347B0;
+}
+
+.header_inicio {
     grid-area: header;
     height: 100%;
     width: 100%;
@@ -12,7 +21,7 @@ header {
     justify-content: space-between;
 }
 
-.start {
+.header_logo {
     height: 70px;
     width: 100px;
     margin-left: 2rem;
@@ -29,7 +38,7 @@ header {
     color: #ffff;
 }
 
-.sair {
+.header_sair-button {
     height: 40px;
     width: max-content;
     margin-right: 4rem;
@@ -38,7 +47,7 @@ header {
     gap: 1px;
 }
 
-.texto_sair:hover{
+.texto_sair:hover {
     -xpedu-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
@@ -59,8 +68,7 @@ header {
     .texto_sair {
         display: none;
     }
-
-    .sair:hover{
+    .sair:hover {
         -xpedu-transform: scale(1.05);
         -ms-transform: scale(1.05);
         transform: scale(1.05);

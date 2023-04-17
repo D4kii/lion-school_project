@@ -1,0 +1,15 @@
+.header_search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box_matricula {
+    background-color: transparent;
+    position: absolute;
+    height: 1.5rem;
+    border: solid 2px #ffffff;
+    border-radius: 5px;
+    color: #3347B0;
+    font-weight: 600;
+}
