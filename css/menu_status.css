@@ -12,6 +12,11 @@
     align-items: center;
 }
 
+.menu-dropdown_title:hover {
+    color: #ffffff;
+    transition: .2s;
+}
+
 .menu-dropdown_status {
     width: 10%;
     justify-content: center;
@@ -72,6 +77,11 @@
     display: block;
 }
 
+.dropdown:hover .menu-dropdown_title {
+    color: #ffffff;
+    transition: .2s;
+}
+
 .menu_aluno-finalizado:hover,
 .menu_aluno-cursando:hover,
 .menu_aluno-todos:hover {
@@ -102,14 +112,14 @@
     }
 }
 
-@media (max-width:600px){
-    .card-status{
+@media (max-width:600px) {
+    .card-status {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: max-content;
     }
-    .legenda-status_componentes{
+    .legenda-status_componentes {
         padding: .5rem;
     }
     .dropdown-place {
