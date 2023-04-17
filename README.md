@@ -1,6 +1,6 @@
 # Atividade integrada Lion School - SENAI 2023
 
-> Clique _[aqui](https://main--guileless-cobbler-afec96.netlify.app)_ para vizualizar o Projeto
+> Clique _[aqui](https://www.figma.com/file/W5uTetRow1b5xAVAlv7mrX/PWFE---Trabalho-Integrado-(Copy)?node-id=0-1&t=ahaTjrMEOiMjKAOA-0)_ para vizualizar o Projeto no Figma
 
 ![](./imgs/Capturar.PNG)
 
