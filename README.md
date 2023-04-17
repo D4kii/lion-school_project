@@ -22,7 +22,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
 - [X]  A maioria das funções seguem as boas práticas como responsabilidade única?
 - [X]  Foi criado o layout responsivo no Figma?
 - [X]  Foi implementado a responsividade conforme planejado no Figma?
-- [ ]  Foi criado o filtro por ano?
+- [X]  Foi criado o filtro por ano?
 
 ## Tecnologias e ferramentas Utilizadas
 
