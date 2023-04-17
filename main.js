@@ -157,6 +157,7 @@ const criandoCarregamentoStatus = async(sigla) => {
                 titleCurso.innerHTML = `Todos os Alunos`
 
                 const cardsAlunos = document.getElementById('card-curso_place');
+                cardsAlunos.style.display = 'grid'
 
                 console.log(sigla);
                 const dadosAlunosCard = await todos.listaAlunosCurso.alunos.map(criandoCardAlunos)
@@ -170,6 +171,7 @@ const criandoCarregamentoStatus = async(sigla) => {
                 titleCurso.innerHTML = idClicado
 
                 const cardsAlunos = document.getElementById('card-curso_place');
+                cardsAlunos.style.display = 'grid'
 
                 const dadosAlunosCard = await retorno.listaAlunosStatus.alunos.map(criandoCardAlunos)
                 cardsAlunos.replaceChildren(...dadosAlunosCard)
@@ -261,6 +263,7 @@ const criandoCarregamentoAnoConclusao = async(alunos) => {
 
 
                     const cardsAlunos = document.getElementById('card-curso_place');
+                    cardsAlunos.style.display = 'grid'
 
 
                     const dadosAlunosCard = await alunoAnoConclusao.listaAlunosStatus.alunos.map(criandoCardAlunos)
