@@ -2,7 +2,7 @@
 
 export const getItensCurso = async() => {
 
-    const url = `https://perfect-moth-smock.cyclic.app/v1/lion-school/cursos`
+    const url = `https://alive-bull-leotard.cyclic.app/v1/lion-school/cursos`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -11,7 +11,7 @@ export const getItensCurso = async() => {
 
 export const getAlunos = async() => {
 
-    const urlTodosAlunos = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos`;
+    const urlTodosAlunos = `https://alive-bull-leotard.cyclic.app/v1/lion-school/alunos`;
     const responseTodosAlunos = await fetch(urlTodosAlunos);
     const dataTodosAlunos = await responseTodosAlunos.json();
 
@@ -22,7 +22,7 @@ export const getAlunos = async() => {
 }
 export const getAlunoMatricula = async(filtro) => {
 
-    const urlTodosAlunoMatricula = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos/${filtro}`;
+    const urlTodosAlunoMatricula = `https://alive-bull-leotard.cyclic.app/v1/lion-school/alunos/${filtro}`;
     const responseAlunoMatricula = await fetch(urlTodosAlunoMatricula);
     const dataAlunoMatricula = await responseAlunoMatricula.json();
 
@@ -33,7 +33,7 @@ export const getAlunoMatricula = async(filtro) => {
 }
 
 export const getAlunosCurso = async(filtro) => {
-    const urlAlunosCurso = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos?cursos=${filtro}`
+    const urlAlunosCurso = `https://alive-bull-leotard.cyclic.app/v1/lion-school/alunos?cursos=${filtro}`
     const responseAlunosCurso = await fetch(urlAlunosCurso);
     const dataAlunosCurso = await responseAlunosCurso.json();
     return {
@@ -42,7 +42,7 @@ export const getAlunosCurso = async(filtro) => {
 }
 
 export const getAlunosStatus = async(idClicado) => {
-    const urlAlunosStatus = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos?status=${idClicado}`
+    const urlAlunosStatus = `https://alive-bull-leotard.cyclic.app/v1/lion-school/alunos?status=${idClicado}`
     const responseAlunosStatus = await fetch(urlAlunosStatus);
     const dataAlunosStatus = await responseAlunosStatus.json();
 
@@ -52,7 +52,7 @@ export const getAlunosStatus = async(idClicado) => {
 }
 
 export const getAlunosCursoStatus = async(filtro, idClicado) => {
-    const urlAlunosStatus = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos?cursos=${filtro}&status=${idClicado}`
+    const urlAlunosStatus = `https://alive-bull-leotard.cyclic.app/v1/lion-school/alunos?cursos=${filtro}&status=${idClicado}`
     const responseAlunosStatus = await fetch(urlAlunosStatus);
     const dataAlunosStatus = await responseAlunosStatus.json();
 
@@ -62,7 +62,7 @@ export const getAlunosCursoStatus = async(filtro, idClicado) => {
 }
 
 export const getAlunosCursoConclusao = async(filtro, idClicado) => {
-    const urlAlunosStatus = `https://perfect-moth-smock.cyclic.app/v1/lion-school/alunos?cursos=${filtro}&conclusao=${idClicado}`
+    const urlAlunosStatus = `https://alive-bull-leotard.cyclic.app/v1/lion-school/alunos?cursos=${filtro}&conclusao=${idClicado}`
     const responseAlunosStatus = await fetch(urlAlunosStatus);
     const dataAlunosStatus = await responseAlunosStatus.json();
 

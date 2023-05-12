@@ -107,6 +107,8 @@
 .img-DS {
     padding: 5%;
     height: 6rem;
+    filter: invert(100%);
+    color: #ffff;
 }
 
 .cards-tag-RDS {
@@ -123,6 +125,8 @@
 .img-RDS {
     padding: 5%;
     height: 6rem;
+    filter: invert(100%);
+    color: #ffff;
 }
 
 @media (max-width:1100px) {
